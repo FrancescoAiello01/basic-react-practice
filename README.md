@@ -3,6 +3,8 @@
 This is a small, basic app I used when learning react
   - Free free to leverage in any way to aid your learning/development process
 
+Please keep in mind that the way things are implemented here aren't necessarily how they should be. Most components and files were built in a fairly unnecessarily modulated/complicated way to leverage different possible functions of react.
+
 
 ### How to use
 Clone the repository & change directory

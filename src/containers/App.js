@@ -3,6 +3,8 @@ import classes from "./App.css";
 import Person from ".././components/Persons/Person/Person";
 import Persons from ".././components/Persons/Persons";
 import Cockpit from ".././components/Cockpit/Cockpit";
+import withClass from "../hoc/withClass";
+import Aux from "../hoc/Aux";
 
 class App extends Component {
   constructor(props) {
@@ -39,6 +41,15 @@ class App extends Component {
 
   componentDidMount() {
     console.log("App.js ComponentDidMount run");
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log("[App.js] shouldComponentUpdate");
+    return true;
+  }
+
+  componentDidUpdate() {
+    console.log("[App.js] ComponentDidUpdate");
   }
 
   nameChangedHandler = (event, id) => {
@@ -85,17 +96,17 @@ class App extends Component {
 
     return (
       console.log("AppJS Render"),
-      <div className={classes.App}>
+      <Aux>
         <Cockpit 
           title={this.props.appTitle}
           showPersons={this.state.showPersons} 
-          persons={this.state.persons}
+          personsLength={this.state.persons.length}
           clicked={this.togglePersonsHandler}/>
         {persons}
-      </div>
+      </Aux>
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
   }
 }
 
-export default App;
+export default withClass(App, classes.App);
