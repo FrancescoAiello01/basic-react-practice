@@ -1,9 +1,8 @@
 # Practice React App
 
-This is a small, basic app I used when learning react
+This is a small, basic app I used when learning react. It's really more a playground than a reasonably written app. The way things are implemented here aren't necessarily how they should be. Most components and files were built in a fairly unnecessarily modulated/complicated way to leverage different possible functions the react library offers.
   - Free free to leverage in any way to aid your learning/development process
 
-Please keep in mind that the way things are implemented here aren't necessarily how they should be. Most components and files were built in a fairly unnecessarily modulated/complicated way to leverage different possible functions of react.
 
 
 ### How to use
