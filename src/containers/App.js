@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import classes from "./App.css";
-import Person from ".././components/Persons/Person/Person";
 import Persons from ".././components/Persons/Persons";
 import Cockpit from ".././components/Cockpit/Cockpit";
 import withClass from "../hoc/withClass";
@@ -31,7 +30,8 @@ class App extends Component {
       }
     ],
     otherState: "some other value",
-    showPersons: false
+    showPersons: false,
+    changedCounter: 0
   };
 
   static getDerivedStateFromProps(props, state) {
@@ -66,7 +66,12 @@ class App extends Component {
     const persons = [...this.state.persons]; // spread operator again --> to copy object from state
     persons[personIndex] = person;
 
-    this.setState({ persons: persons });
+    this.setState((prevState, props) => { // If using old state to modify new state, do it like this
+      return { 
+          persons: persons,
+          changeCounter: prevState + 1 
+        };
+    });
   };
 
   deletePersonHandler = (personIndex) => {
